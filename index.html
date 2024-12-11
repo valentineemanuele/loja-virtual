@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VALENTINE STORE</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f9f9f9;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .page-container {
+      width: 90%;
+      max-width: 1200px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background-color: #444;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .header nav a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .header nav a:hover {
+      text-decoration: underline;
+    }
+
+    .main-content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .main-content h2 {
+      margin-bottom: 20px;
+      color: #444;
+    }
+
+    .product-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .product {
+      flex: 1 1 calc(25% - 20px);
+      background-color: #f4f4f4;
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .product img {
+      max-width: 100%;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .product h3 {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    .product p {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .product button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .product button:hover {
+      background-color: #218838;
+    }
+
+    .footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .cart {
+      margin: 20px 0;
+      padding: 10px;
+      background-color: #e9f5e9;
+      border: 1px solid #28a745;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .cart h3 {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-container">
+    <header class="header">
+      <h1>Loja da Valentine Cacau</h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Produtos</a>
+        <a href="#">Contato</a>
+      </nav>
+    </header>
+    
+    <main class="main-content">
+      <h2>Produtos em Destaque</h2>
+      <div class="cart">
+        <h3>Carrinho</h3>
+        <p>Itens: <span id="cart-count">0</span></p>
+        <p>Total: R$ <span id="cart-total">0.00</span></p>
+      </div>
+      <div class="product-list">
+        <div class="product">
+          <img src="image1.jpg" alt="Produto 1">
+          <h3>Short Para-trânsito</h3>
+          <p>R$ 50,00</p>
+          <button onclick="addToCart(50)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="product">
+          <img src="image2.jpg" alt="Produto 2">
+          <h3>Saia Tímida-Mas-Nem-Tanto</h3>
+          <p>R$ 75,00</p>
+          <button onclick="addToCart(75)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="product">
+          <img src="image3.jpg" alt="Produto 3">
+          <h3>Blusa Acende-Cigarro</h3>
+          <p>R$ 50,00</p>
+          <button onclick="addToCart(50)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="product">
+          <img src="image4.jpg" alt="Produto 4">
+          <h3>Blusa Cuida-Do-Seu-Homem-Senão-Vou-Roubar</h3>
+          <p>R$ 60,00</p>
+          <button onclick="addToCart(60)">Adicionar ao Carrinho</button>
+
+          <div class="product">
+            <img src="image5.jpg" alt="Produto 5">
+            <h3>Blusa de Comprensa Comportada</h3>
+            <p>R$ 80,00</p>
+            <button onclick="addToCart(80)">Adicionar ao Carrinho</button>
+        <div class="product">
+                <img src="image6.jpg" alt="Produto 6">
+                <h3>Blusa Adolescente-Revoltada</h3>
+                <p>R$ 75,00</p>
+                <button onclick="addToCart(75)">Adicionar ao Carrinho</button>
+        <div class="product">
+                    <img src="image7.jpg" alt="Produto 7">
+                    <h3>Saia Gisele-Budchen</h3>
+                    <p>R$ 70,00</p>
+                    <button onclick="addToCart(70)">Adicionar ao Carrinho</button>
+        <div class="product">
+                        <img src="image8.jpg" alt="Produto 8">
+                        <h3>Saia Aline-Barros</h3>
+                        <p>R$ 80,00</p>
+                        <button onclick="addToCart(80)">Adicionar ao Carrinho</button>
+        <div class="product">
+                            <img src="image9.jpg" alt="Produto 9">
+                            <h3>Blusa Crochê Era-Melhor-Ter-Ido-Sem</h3>
+                            <p>R$ 50,00</p>
+                            <button onclick="addToCart(80)">Adicionar ao Carrinho</button>
+        <div class="product">
+                                <img src="image10.jpg" alt="Produto 10">
+                                <h3>Blusa Cinza-Paixão</h3>
+                                <p>R$ 45,00</p>
+                                <button onclick="addToCart(45)">Adicionar ao Carrinho</button>
+        <div class="product">
+                                    <img src="image11.jpg" alt="Produto 11">
+                                    <h3>Vestido Anjo-Que-Caiu-Do-Céu</h3>
+                                    <p>R$ 180,00</p>
+                                    <button onclick="addToCart(180)">Adicionar ao Carrinho</button>
+        <div class="product">
+                                        <img src="image12.jpg" alt="Produto 12">
+                                        <h3>Vestido Cigana-Apaixonada</h3>
+                                        <p>R$ 200,00</p>
+                                        <button onclick="addToCart(200)">Adicionar ao Carrinho</button>
+        <div class="product">
+                                            <img src="image13.jpg" alt="Produto 13">
+                                            <h3>Vestido Me-Deixe-Só</h3>
+                                            <p>R$ 180,00</p>
+                                            <button onclick="addToCart(180)">Adicionar ao Carrinho</button>
+         <div class="product">
+                                                <img src="image14.jpg" alt="Produto 14">
+                                                <h3>Calça de Shopping</h3>
+                                                <p>R$ 90,00</p>
+                                                <button onclick="addToCart(90)">Adicionar ao Carrinho</button>
+        <div class="product">
+                                                    <img src="image15.jpg" alt="Produto 15">
+                                                    <h3>Vestido Rose-Quer</h3>
+                                                    <p>R$ 120,00</p>
+                                                    <button onclick="addToCart(120)">Adicionar ao Carrinho</button>
+        <div class="product">
+                                                        <img src="image16.jpg" alt="Produto 16">
+                                                        <h3>Vestido Noiva-Encalhada</h3>
+                                                        <p>R$ 120,00</p>
+                                                        <button onclick="addToCart(120)">Adicionar ao Carrinho</button>
+        <div class="product">
+                                                            <img src="image17.jpg" alt="Produto 4">
+                                                            <h3>Blusa Secretária-Do-Marido</h3>
+                                                            <p>R$ 120,00</p>
+                                                            <button onclick="addToCart(120)">Adicionar ao Carrinho</button>     
+        <div class="product">
+                                                                <img src="image18.jpg" alt="Produto 4">
+                                                                <h3>Vestido Mulher-De-Hokage</h3>
+                                                                <p>R$ 120,00</p>
+                                                                <button onclick="addToCart(120)">Adicionar ao Carrinho</button>            
+        <div class="product">
+                                                                    <img src="image19.jpg" alt="Produto 4">
+                                                                    <h3>Blusa-Corset Imperatiz</h3>
+                                                                    <p>R$ 120,00</p>
+                                                                    <button onclick="addToCart(120)">Adicionar ao Carrinho</button> 
+        <div class="product">
+                                                                        <img src="image20.jpg" alt="Produto 4">
+                                                                        <h3>Blusa-Tomara-que-caia Avril-Lavigne</h3>
+                                                                        <p>R$ 120,00</p>
+                                                                        <button onclick="addToCart(120)">Adicionar ao Carrinho</button>
+                                                                    </div>
+      </div>
+    </main>
+    
+    <footer class="footer">
+      <p>&copy; 2024 Loja Virtual</p>
+    </footer>
+  </div>
+  
+  <script>
+    let cartCount = 0;
+    let cartTotal = 0;
+
+    function addToCart(price) {
+      cartCount++;
+      cartTotal += price;
+      document.getElementById('cart-count').innerText = cartCount;
+      document.getElementById('cart-total').innerText = cartTotal.toFixed(2);
+    }
+  </script>
+</body>
+</html>
